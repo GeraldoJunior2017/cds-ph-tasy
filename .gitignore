@@ -3,3 +3,6 @@
 
 # build files
 target
+
+# configuration files
+src/main/resources/application.yml
