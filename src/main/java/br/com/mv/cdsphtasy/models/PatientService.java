@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.time.LocalDateTime;
 
 @Data
@@ -28,7 +26,9 @@ public class PatientService {
     @ManyToOne
     @JoinColumn(name = "CD_ESTABELECIMENTO")
     private Establishment establishment;
-    /*"attendanceUnit":"",
+    @Column(name = "CD_SETOR_OBITO")
+    private Long attendanceUnit;
+    /*
     "type":"",
     */
     @ManyToOne
@@ -38,20 +38,6 @@ public class PatientService {
     private LocalDateTime createdDate;
     @Column(name = "DT_INICIO_ATENDIMENTO")
     private LocalDateTime initDate;
-
-    /*"cidVersion":"",
-    "cidCode":"",
-    "cidDescription":"",
-    "integrationSource":"",
-    "healthInsuranceId":"",
-    "healthInsuranceName":"",
-    "clientKey":"",
-    "ansCode":"",
-    "procedureType":"TUSS",
-    "procedureId":"",
-    "procedureDescription":"",
-    "retroactive":false,
-    "agent":"CDS ",*/
     @ManyToOne
     @JoinColumn(name = "CD_PESSOA_FISICA")
     private PhysicalPerson physicalPerson;
